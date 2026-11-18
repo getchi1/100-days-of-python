@@ -23,6 +23,13 @@ class Snake:
         timmy.goto(position)
         self.new_obj.append(timmy)
 
+    def reset_snake(self):
+        for segments in self.new_obj:
+            segments.goto(1000,1000)
+        self.new_obj.clear()
+        self.create_snake()
+        self.head = self.new_obj[0]
+
     def extend_snake(self):
         #add new segment to the snake
         self.add_segment(self.new_obj[-1].position())
